@@ -1,0 +1,16 @@
+﻿@model System.Tuple<string, string>
+
+<h3>API User Details</h3>
+<p>The API user is used to authenticate with the Launch Example API.</p>
+
+
+<form>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Username</label>
+        <input type="text" readonly="readonly" class="form-control" value="@Model.Item1" />
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Password</label>
+        <input type="text" readonly="readonly" class="form-control" value="@Model.Item2" />
+    </div>
+</form>

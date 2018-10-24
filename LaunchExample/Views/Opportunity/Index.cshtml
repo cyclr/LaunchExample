@@ -1,0 +1,38 @@
+﻿@model System.Collections.Generic.IList<Cyclr.LaunchExample.Models.Opportunity>
+
+<h3>Opportunities @Html.ActionLink("Add Opportunity", "add", null, new { @class = "btn btn-primary float-right" })</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Contact</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>DueDate</th>
+            <th>Status</th>
+            <th>Value</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var o in Model)
+        {
+        <tr>
+            <td>@o.Id</td>
+            <td>@(o.Contact?.FirstName) @(o.Contact?.LastName)</td>
+            <td>@o.Name</td>
+            <td>@o.Description</td>
+            <td>@o.DueDate</td>
+            <td>@o.Status</td>
+            <td>@o.Value</td>
+            <td>
+                <div class="float-right">
+                    @Html.ActionLink("Delete", "delete", new { o.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Edit", "edit", new { o.Id }, new { @class = "btn btn-primary" })
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

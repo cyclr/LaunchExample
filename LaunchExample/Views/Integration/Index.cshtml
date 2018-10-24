@@ -1,0 +1,14 @@
+﻿<h3>Integrations</h3>
+
+<a id="btnLaunch" href="javascript:void(0);" onclick="javascript:launch()" class="btn btn-success">Add New Integration</a>
+<a id="btnOrbit" href="javascript:void(0);" onclick="javascript:orbit()" class="btn btn-outline-primary">View Existing Integrations</a>
+
+<script type="text/javascript">
+    function launch() {
+        var w = window.open('@Url.Action("Add")', 'launch', 'width=600,height=800');
+    }
+
+    function orbit() {
+        var w = window.open('@Url.Action("Manage")', 'orbit', 'width=600,height=400');
+    }
+</script>
